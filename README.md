@@ -9,7 +9,7 @@
   - Set listen_addresses in file postgresql.conf as '\*'
   - Set METHOD for IPv4 local connections in file pg_hba.conf as md5
 - Data generation refer to [link](https://classroom.udacity.com/nanodegrees/nd004-cn/parts/d3335c49-3556-488a-9f63-c0d28b16ff12/modules/bc51d967-cb21-46f4-90ea-caf73439dc59/lessons/262a84d7-86dc-487d-98f9-648aa7ca5a0f/concepts/a9cf98c8-0325-4c68-b972-58d5957f1a91) 'Download the data' section
-### Clone gitr repository
+### Codes
 ```bash
 $ git clone https://github.com/guomxin/udfullstack_loganalysis.git
 ```
