@@ -13,12 +13,12 @@ SQL_GET_REQERROR_DAYS = """
 """
 
 if __name__ == "__main__":
-    # 建立数据库连接
+    # Connect database
     conn = psycopg2.connect(
         dbname="news", user="postgres",
         password="111111", host="192.168.0.108")
 
-    # 按天统计请求失败率
+    # Calculate request error rate per day
     cursor = conn.cursor()
     cursor.execute(SQL_GET_REQERROR_DAYS)
     error_days = cursor.fetchall()
@@ -27,5 +27,5 @@ if __name__ == "__main__":
             break
         print("'{}' -- {:.2f}% errors".format(date, error_rate))
 
-    # 关闭数据库连接
+    # Close the connection
     conn.close()

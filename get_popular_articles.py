@@ -16,17 +16,17 @@ SQL_GET_TOP_N_ARTICLES = """
 """
 
 if __name__ == "__main__":
-    # 建立数据库连接
+    # Connect database
     conn = psycopg2.connect(
         dbname="news", user="postgres",
         password="111111", host="192.168.0.108")
 
-    # 获取并打印热门文章
+    # Fetch popular articles
     cursor = conn.cursor()
     cursor.execute(SQL_GET_TOP_N_ARTICLES.format(N))
     popular_articles = cursor.fetchall()
     for (title, view_count) in popular_articles:
         print("'{}' -- {} views".format(title, view_count))
 
-    # 关闭数据库连接
+    # Close the database connection
     conn.close()

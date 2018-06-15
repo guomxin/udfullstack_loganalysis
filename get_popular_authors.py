@@ -12,17 +12,17 @@ SQL_GET_TOP_AUTHORS = """
 """
 
 if __name__ == "__main__":
-    # 建立数据库连接
+    # Connect database
     conn = psycopg2.connect(
         dbname="news", user="postgres",
         password="111111", host="192.168.0.108")
 
-    # 获取并打印热门作者
+    # Fetch popular authors
     cursor = conn.cursor()
     cursor.execute(SQL_GET_TOP_AUTHORS)
     popular_authors = cursor.fetchall()
     for (author_name, view_count) in popular_authors:
         print("'{}' -- {} views".format(author_name, view_count))
 
-    # 关闭数据库连接
+    # Close the connection
     conn.close()
