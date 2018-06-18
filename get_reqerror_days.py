@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import psycopg2
@@ -16,7 +17,7 @@ if __name__ == "__main__":
     # Connect database
     conn = psycopg2.connect(
         dbname="news", user="postgres",
-        password="111111", host="192.168.0.108")
+        password="111111", host="127.0.0.1")
 
     # Calculate request error rate per day
     cursor = conn.cursor()
